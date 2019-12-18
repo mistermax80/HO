@@ -141,7 +141,7 @@ public class OutputTableModel extends AbstractTableModel {
      */
     public Object getToolTipAt(int rowIndex, int columnIndex) {
         if (columnIndex == 0) {
-            return ((JLabel) getValueAt(rowIndex, columnIndex)).getToolTipText();
+            return ((PlayerNameCell) getValueAt(rowIndex, columnIndex)).getComponent(false).getToolTipText();
         } else
             return ((VerticalIndicator) getValueAt(rowIndex, columnIndex)).getToolTipText();
     }

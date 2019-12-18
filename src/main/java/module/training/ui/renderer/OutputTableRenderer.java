@@ -28,9 +28,9 @@ public class OutputTableRenderer extends DefaultTableCellRenderer {
         if (column < 3 && isSelected) {
             if (column == 0) {
                 PlayerNameCell pnc = (PlayerNameCell) value;
-                pnc.setForeground(this.getForeground());
-                pnc.setBackground(this.getBackground());
-                return pnc;
+                pnc.getComponent(isSelected).setForeground(this.getForeground());
+                pnc.getComponent(isSelected).setBackground(this.getBackground());
+                return pnc.getComponent(isSelected);
             } else {
                 return this;
             }
@@ -68,9 +68,9 @@ public class OutputTableRenderer extends DefaultTableCellRenderer {
             if (column == 0) {
                 PlayerNameCell pnc = (PlayerNameCell) value;
                 // Reset default values
-                pnc.setForeground(Color.BLACK);
-                pnc.setBackground(bg_color);
-                return pnc;
+                pnc.getComponent(isSelected).setForeground(Color.BLACK);
+                pnc.getComponent(isSelected).setBackground(bg_color);
+                return pnc.getComponent(isSelected);
             } else {
                 setBackground(bg_color);
             }
